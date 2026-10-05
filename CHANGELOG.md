@@ -1,5 +1,11 @@
 # Değişiklik günlüğü
 
+## 1.1.6
+- Çift "Görüntüle" düğmesi düzeltildi (satır düzeyinde tekilleme).
+- Kaynak zaman çizelgesi gözlemi: tıklama sonrası UYAP'ın gerçek isteği bulunup doğrudan açılır.
+- `.eyp` adıyla gelen düz metin artık metin görünümünde gösterilir.
+- ZIP olmayan başarılı yanıtlar da açılır (ham PDF/metin); kör "SUNUCU ZIP döndürmedi" hatası kaldırıldı.
+
 ## 1.1.5
 - İçerik tabanlı PDF tespiti: `.eyp` adıyla sunulan ham PDF (`%PDF-`) doğrudan açılır.
 - Blob MIME türleri düzeltildi (PDF ham metin dökülmüyor).
