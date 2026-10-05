@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8"><style>
+body{font-family:"Segoe UI",Arial,sans-serif;width:260px;margin:0;padding:14px;color:#0f172a}
+h1{font-size:14px;margin:0 0 8px} p{font-size:12px;color:#475569}
+button{width:100%;background:#1a3a5f;color:#fff;border:0;border-radius:8px;padding:10px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px}
+button.sec{background:#e8eef5;color:#1a3a5f}
+</style></head><body>
+<h1>📦 UYAP EYP Görüntüleyici</h1>
+<p>UYAP'ta bir <b>.eyp</b> bağlantısına tıklayınca otomatik önizleme açılır. Olmazsa aşağıdan görüntüleyiciyi açıp dosyayı seçin.</p>
+<button id="open">Görüntüleyiciyi aç</button>
+<button id="help" class="sec">Kurulum yardımı</button>
+<script>
+document.getElementById('open').onclick=()=>{chrome.tabs.create({url:chrome.runtime.getURL('viewer.html')});};
+document.getElementById('help').onclick=()=>{chrome.tabs.create({url:'https://avukat.uyap.gov.tr'});};
+</script>
+</body></html>

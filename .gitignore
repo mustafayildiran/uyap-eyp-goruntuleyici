@@ -1,0 +1,14 @@
+# Binaries, OS junk, test downloads — never commit these
+*.zip
+*.eyp
+*.udf
+*.pdf
+*.tif
+*.tiff
+node_modules/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+.vscode/
+.idea/

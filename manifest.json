@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "UYAP EYP Görüntüleyici",
+  "version": "1.1.5",
+  "description": "avukat.uyap.gov.tr üzerinde .eyp dosyalarını indirmeden doğrudan görüntüleyin. Desteklenmeyen belge türü hatasına takılmayın.",
+  "permissions": ["downloads", "storage", "webRequest"],
+  "host_permissions": ["https://avukat.uyap.gov.tr/*", "https://*.uyap.gov.tr/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://avukat.uyap.gov.tr/*", "https://*.uyap.gov.tr/*"],
+      "js": ["inject.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true
+    },
+    {
+      "matches": ["https://avukat.uyap.gov.tr/*", "https://*.uyap.gov.tr/*"],
+      "js": ["jszip.min.js", "eyp-parser.js", "content.js"],
+      "css": ["viewer.css"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["jszip.min.js", "eyp-parser.js", "viewer.js", "viewer.html"],
+      "matches": ["https://avukat.uyap.gov.tr/*", "https://*.uyap.gov.tr/*"]
+    }
+  ],
+  "action": {
+    "default_title": "EYP Görüntüleyici",
+    "default_popup": "popup.html"
+  }
+}
